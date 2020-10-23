@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "moment": "^2.29.1",
+        "npm-watch": "^0.7.0",
         "vue-sweetalert2": "^4.0.1"
     }
 }
