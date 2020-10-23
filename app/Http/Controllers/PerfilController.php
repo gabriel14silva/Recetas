@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Perfil;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class PerfilController extends Controller
 {
@@ -81,7 +82,15 @@ class PerfilController extends Controller
         //Si el usuario sube una imagen
 
         if( $request['imagen'] ) {
+            // obtener la ruta de la imagen
+            $ruta_imagen = $request['imagen']->store('upload-perfiles', 'public');
 
+            // Resize de la imagen
+            $img = Image::make(public_path("storage/{$ruta_imagen}"))->fit(600, 600);
+            $img->save();
+
+            //Crear un arreglo
+            $array_imagen = ['imagen' => $ruta_imagen];
         }
 
         //Asignar nombre y URL
@@ -98,13 +107,14 @@ class PerfilController extends Controller
 
 
         //Asignar biografia e imagen
-        auth()->user()->perfil()->update(
-            $data
-        );
+        auth()->user()->perfil()->update( array_merge(
+            $data,
+            $array_imagen ?? []
+        ) );
 
 
         //Redireccionar
-        return 'Actualizando perfil';
+        return redirect()->action('RecetaController@index');
     }
 
     /**
