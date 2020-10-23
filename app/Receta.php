@@ -24,4 +24,10 @@ class Receta extends Model
     }
 
 
+    //Likes que ha recibido una receta
+    public function likes()
+    {
+        return $this->belongsToMany(User::class, 'likes_receta');
+    }
+
 }
