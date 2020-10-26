@@ -10930,6 +10930,7 @@ a.text-dark:focus {
 
 body {
   font-family: "Didact Gothic", sans-serif;
+  background-color: #f4f0f0;
 }
 
 trix-editor {
@@ -10941,6 +10942,10 @@ trix-editor {
   color: white;
   font-family: "Fredoka One", cursive;
   font-size: 2rem;
+  font-family: "Fredoka One", cursive;
+  color: #FFF !important;
+  font-size: 2.4rem;
+  text-decoration: none;
 }
 
 .bg-primary .navbar-brand:hover {
@@ -10948,7 +10953,64 @@ trix-editor {
 }
 
 .icono {
-  width: 36px;
+  width: 16px;
+}
+
+.barra {
+  background-color: #ed4646 !important;
+}
+
+.fecha {
+  color: #ED4646 !important;
+}
+
+.receta-meta p {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #FFF;
+  font-size: 1.4rem;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #FFF;
+}
+
+.titulo-categoria {
+  font-family: "Cabin", sans-serif;
+  color: #333;
+  font-size: 1.8rem;
+  border-bottom: 3px solid #ED4646 !important;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+}
+
+.btn-receta,
+.btn-receta:hover {
+  background-color: #ED4646 !important;
+  border: none;
+}
+
+.owl-carousel .owl-stage {
+  display: flex;
+}
+
+.card {
+  display: flex;
+  flex: 1 0 auto;
+  height: 100%;
+}
+
+.card-body {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .like-btn {
