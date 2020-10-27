@@ -19,7 +19,7 @@ class InicioController extends Controller
         // Obtener todas las categorias
         $categorias = CategoriaReceta::all();
 
-        return $categorias;
+//        return $categorias;
 
 
         // Agrupar las recetas por categoria
@@ -31,6 +31,6 @@ class InicioController extends Controller
 
 //        return $recetas;
 
-        return view('inicio.index', compact('nuevas', 'receyas'));
+        return view('inicio.index', compact('nuevas', 'recetas'));
     }
 }
