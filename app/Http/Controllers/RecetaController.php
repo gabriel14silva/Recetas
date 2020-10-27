@@ -13,7 +13,7 @@ class RecetaController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => 'show']);
+        $this->middleware('auth', ['except' => ['show', 'search']]);
     }
 
     /**
@@ -199,4 +199,17 @@ class RecetaController extends Controller
 
         return redirect()->action('RecetaController@index');
     }
+
+    public function search(Request $request)
+    {
+//        $busqueda = $request['buscar'];
+
+        $busqueda = $request->get('buscar');
+
+        $recetas = Receta::where('titulo', 'like', '%' . $busqueda . '%')->paginate(10);
+        $recetas->appends(['buscar' => $busqueda]);
+
+        return view('busquedas.show', compact('recetas', 'busqueda'));
+    }
+
 }
