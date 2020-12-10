@@ -22,7 +22,6 @@ class UsuarioSeeder extends Seeder
             'url' => 'http://www.griffin.com',
         ]);
 
-        $user->perfil()->create();
 
         $user2 = User::create([
             'name' => 'Jose',
